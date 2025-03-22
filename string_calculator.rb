@@ -4,10 +4,8 @@ class StringCalculator
 
     delimiter = /[\n,]/
     if str.start_with?("//")
-      str = str.gsub("//", "")
-      str_parts = str.split("\n")
-      delimiter = str_parts.first
-      str = str_parts.last
+      delimiter_line, str = str.split("\n", 2)
+      delimiter = delimiter_line.split("//").last
     end
     str.split(delimiter).map(&:to_i).sum
   end
