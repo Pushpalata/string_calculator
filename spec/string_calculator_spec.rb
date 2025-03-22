@@ -18,6 +18,12 @@ RSpec.describe StringCalculator do
       end
     end
 
+    context "single number" do
+      it "returns number if single number is passed" do
+        expect(calculator.add("1")).to eq(1)
+      end
+    end
+
     context "valid numbers" do
       it "returns sum when number passed comma separated" do
         expect(calculator.add("1,2")).to eq(3)
