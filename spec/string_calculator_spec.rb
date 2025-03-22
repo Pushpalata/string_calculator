@@ -58,6 +58,10 @@ RSpec.describe StringCalculator do
       it "returns 3 for '//|\n1|2'" do
         expect(calculator.add("//|\n1|2")).to eq(3)
       end
+
+      it "returns 3 for '//|\n1*2*3'" do
+        expect(calculator.add("//*\n1*2*3")).to eq(6)
+      end
     end
 
     context "Error on negative numbers" do
