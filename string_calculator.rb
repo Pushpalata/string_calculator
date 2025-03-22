@@ -7,6 +7,11 @@ class StringCalculator
       delimiter_line, str = str.split("\n", 2)
       delimiter = delimiter_line[2..]
     end
-    str.split(delimiter).map(&:to_i).sum
+    numbers = str.split(delimiter)
+
+    negative_nums = numbers.map(&:to_i).select { |n| n < 0 }
+    raise "negative numbers not allowed #{negative_nums.join(',')}" if negative_nums.any?
+
+    numbers.map(&:to_i).sum
   end
 end
