@@ -13,6 +13,10 @@ RSpec.describe StringCalculator do
         expect(calculator.add(nil)).to eq(0)
       end
 
+      it "returns 0 for string with spaces" do
+        expect(calculator.add("  ")).to eq(0)
+      end
+
     end
   end
 end
