@@ -50,5 +50,15 @@ RSpec.describe StringCalculator do
       end
     end
 
+    context "different delimiters" do
+      it "returns 3 for '//;\n1;2'" do
+        expect(calculator.add("//;\n1;2")).to eq(3)
+      end
+
+      it "returns 3 for '//|\n1|2'" do
+        expect(calculator.add("//|\n1|2")).to eq(3)
+      end
+    end
+
   end
 end
