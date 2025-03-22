@@ -4,6 +4,6 @@ class StringCalculator
 
     return str.to_i unless str.include?(',')
 
-    str.split(',').map(&:to_i).sum
+    str.split(/[\n,]/).map(&:to_i).sum
   end
 end
