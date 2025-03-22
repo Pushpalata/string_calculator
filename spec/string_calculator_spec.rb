@@ -24,7 +24,7 @@ RSpec.describe StringCalculator do
       end
     end
 
-    context "valid numbers" do
+    context "two numbers" do
       it "returns sum when number passed comma separated" do
         expect(calculator.add("1,2")).to eq(3)
       end
